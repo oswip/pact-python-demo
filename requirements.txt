@@ -1,0 +1,5 @@
+pytest
+requests
+pact-python
+flask
+pipenv

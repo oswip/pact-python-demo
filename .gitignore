@@ -7,4 +7,4 @@ tmp/*
 *.log
 .cache/*
 .pytest_cache/*
-
+.history

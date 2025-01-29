@@ -23,7 +23,9 @@ def setup_no_user_a():
 
 
 def setup_user_a_nonadmin():
-    fakedb['UserA'] = {'name': "UserA", 'id': '1234567', 'created_on': datetime.datetime.now(), 'admin': False}
+    # 2025-01-28 OS updated test data below to make the tests pass
+    #fakedb['UserA'] = {'name': "UserA", 'id': '1234567', 'created_on': datetime.datetime.now(), 'admin': False}
+    fakedb['UserA'] = {'name': "UserA", 'id': '5ed48e21-e3a5-4f4a-9262-523747096fc8', 'created_on': datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S'), 'admin': False}
 
 
 @app.route('/users/<name>')
