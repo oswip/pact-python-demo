@@ -1,3 +1,4 @@
+venv
 *.json
 log/*
 reports/*
@@ -6,3 +7,4 @@ tmp/*
 *.log
 .cache/*
 .pytest_cache/*
+
