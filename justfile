@@ -16,8 +16,24 @@ test-client:
 start-server:
 	{{PYTHON}} pact_python_demo/user-app.py
 
-verifier:
+# verify the pact against the server
+# make sure the server is running
+# - just start-server
+verify-client:
 	{{PACT_VERIFIER}} --provider-base-url=http://localhost:5001 --pact-url=tests/userserviceclient-userservice.json --provider-states-setup-url=http://localhost:5001/_pact/provider_states
 
+start-broker:
+	cd broker; docker-compose up
 
+stop-broker:
+	cd broker; docker-compose down
+
+
+# verify the pact through the broker
+# make sure the broker and server are running
+# - just start-broker
+# - just start-server
+test-full:
+	{{PYTEST}} --publish-pact 0.1
+	./verify_pact.sh 0.2
 	
